@@ -22,8 +22,8 @@ export const DateAvailabilityChecker: React.FC<DateAvailabilityCheckerProps> = (
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#f4efe6]">
             Consulte a disponibilidade do seu mês em 2027
           </h2>
-          <p className="text-xs sm:text-sm text-stone-400 mt-2">
-            Não terceirizamos equipes musicais. Por isso, atendemos no máximo <strong>1 a 2 casamentos por sábado</strong> para manter nosso padrão de excelência acústica e sonorização.
+          <p className="text-sm sm:text-[15px] text-stone-300 mt-2 leading-relaxed">
+            Não terceirizamos equipes musicais para manter nosso padrão de excelência acústica e sonorização. Por isso, as datas são limitadas e exclusivas.
           </p>
         </div>
 
@@ -87,14 +87,10 @@ export const DateAvailabilityChecker: React.FC<DateAvailabilityCheckerProps> = (
           </div>
 
           <div className="bg-[#14161b] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#262a34]">
-            <div className="text-xs text-stone-300 space-y-1">
+            <div className="text-xs sm:text-sm text-stone-300">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Sonorização completa inclusa sem taxa extra de deslocamento local</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Congelamento do valor de 2026 para o seu casamento de 2027</span>
               </div>
             </div>
 

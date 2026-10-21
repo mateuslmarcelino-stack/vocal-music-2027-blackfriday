@@ -165,7 +165,7 @@ export const FAQS = [
   },
   {
     q: 'O que o Grupo VIP do WhatsApp tem de diferente?',
-    a: 'O grupo é SILENCIOSO e restrito a administradores (sem mensagens invasivas de outros membros ou spam). No grupo você recebe em primeira mão os repertórios mais pedidos, áudios dos ensaios, o link exclusivo da live e, mais importante: terá 15 minutos de prioridade na abertura das vagas antes do público geral.'
+    a: 'O grupo é SILENCIOSO e restrito a administradores (sem mensagens invasivas de outros membros ou spam). No grupo você recebe em primeira mão os repertórios mais pedidos, o link exclusivo da live e, mais importante: terá prioridade na abertura das vagas antes do público geral.'
   },
   {
     q: 'E se a data do meu casamento mudar em 2027?',

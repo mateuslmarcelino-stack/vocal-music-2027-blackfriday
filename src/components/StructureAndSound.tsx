@@ -110,7 +110,7 @@ export const StructureAndSound: React.FC = () => {
 
               <div className="pt-4 border-t border-[#262a34] text-center">
                 <p className="text-xs text-[#e8ca82] font-medium">
-                  ★ O valor fechado na Live é congelado para 2027 sem taxas de reajuste anual.
+                  ★ Condição especial exclusiva de Black Friday liberada na Live para os membros do Grupo VIP.
                 </p>
               </div>
             </div>

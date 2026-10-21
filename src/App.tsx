@@ -98,6 +98,21 @@ export default function App() {
     localStorage.removeItem('vocal_music_leads');
   };
 
+  // Secret shortcut for traffic manager: Ctrl+Shift+G or ?admin=true
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.search.includes('admin')) {
+      setIsLeadsManagerOpen(true);
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'G' || e.key === 'g')) {
+        e.preventDefault();
+        setIsLeadsManagerOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0c0d10] text-[#f4efe6] flex flex-col font-sans selection:bg-[#c5a059] selection:text-[#0c0d10]">
       {/* Top Announcement Bar */}
@@ -109,7 +124,7 @@ export default function App() {
       </div>
 
       {/* Main Header */}
-      <Header onScrollToForm={scrollToForm} onOpenLeadsManager={() => setIsLeadsManagerOpen(true)} />
+      <Header onScrollToForm={scrollToForm} />
 
       {/* Main Content Area */}
       <main className="flex-1">
@@ -167,8 +182,8 @@ export default function App() {
         </section>
       </main>
 
-      {/* Footer */}
-      <Footer onOpenLeadsManager={() => setIsLeadsManagerOpen(true)} leadsCount={leads.length} />
+      {/* Footer with plenty of bottom padding for mobile sticky bar */}
+      <Footer onSecretOpenLeadsManager={() => setIsLeadsManagerOpen(true)} />
 
       {/* Floating WhatsApp Action Button for Quick Access */}
       <div className="fixed bottom-6 right-6 z-30 hidden sm:block">

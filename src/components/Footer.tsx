@@ -2,13 +2,12 @@ import React from 'react';
 import { Music2, ExternalLink, ShieldCheck, Settings } from 'lucide-react';
 
 interface FooterProps {
-  onOpenLeadsManager: () => void;
-  leadsCount: number;
+  onSecretOpenLeadsManager?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenLeadsManager, leadsCount }) => {
+export const Footer: React.FC<FooterProps> = ({ onSecretOpenLeadsManager }) => {
   return (
-    <footer className="bg-[#08090b] border-t border-[#262a34] py-12 text-stone-400 text-xs">
+    <footer className="bg-[#08090b] border-t border-[#262a34] py-12 pb-28 sm:pb-12 text-stone-400 text-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#262a34]/60">
           <div className="flex items-center gap-3">
@@ -35,22 +34,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLeadsManager, leadsCount }
               <span>Site Institucional (vocalmusic.com.br)</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
-
-            <span className="text-stone-600">·</span>
-
-            <button
-              onClick={onOpenLeadsManager}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#14161b] hover:bg-[#1c1f26] text-stone-300 border border-[#262a34] transition-colors cursor-pointer"
-            >
-              <Settings className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span>Painel do Gestor de Tráfego ({leadsCount} leads)</span>
-            </button>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
-          <p>
-            © {new Date().getFullYear()} Vocal Music. Todos os direitos reservados. Campanha oficial de Mini Lançamento Black Friday Casamentos 2027.
+          <p
+            onClick={onSecretOpenLeadsManager}
+            className="cursor-default select-none"
+            title="Vocal Music"
+          >
+            © {new Date().getFullYear()} Vocal Music. Todos os direitos reservados. Black Friday Casamentos 2027.
           </p>
 
           <div className="flex items-center gap-2">

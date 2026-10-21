@@ -31,7 +31,7 @@ export const LaunchSteps: React.FC<LaunchStepsProps> = ({ onScrollToForm }) => {
     {
       step: '04',
       title: 'Abertura Prioritária da Agenda',
-      desc: 'Quem estiver no Grupo VIP terá 15 minutos de prioridade para reservar a data do casamento em 2027 antes do público geral.',
+      desc: 'Quem estiver no Grupo VIP terá prioridade para reservar a data do casamento em 2027 antes do público geral.',
       icon: Lock,
       badge: 'Prioridade Total'
     }

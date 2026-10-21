@@ -141,9 +141,9 @@ export const HeroCapture: React.FC<HeroCaptureProps> = ({ onLeadCaptured, formRe
         <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1c1f26] border border-[#c5a059]/30 text-xs sm:text-sm text-[#e8ca82] shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#c5a059] animate-ping" />
-            <span className="font-semibold tracking-wide uppercase text-[11px] text-[#c5a059]">Mini Lançamento Black Friday</span>
+            <span className="font-semibold tracking-wide uppercase text-[11px] text-[#c5a059]">Black Friday</span>
             <span className="text-stone-500">|</span>
-            <span className="text-stone-300">Apenas 15 datas de 2027 com a condição inédita</span>
+            <span className="text-stone-300">Datas de 2027 com condição especial</span>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export const HeroCapture: React.FC<HeroCaptureProps> = ({ onLeadCaptured, formRe
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[#f4efe6] leading-[1.15]">
                 Vai casar em <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#dfb963] via-[#f4efe6] to-[#c5a059]">2027</span>?
                 <br />
-                Garanta a música dos seus sonhos com valor congelado e condição de Black Friday.
+                A trilha sonora do seu grande dia com valor especial na condição de Black Friday.
               </h1>
 
               <p className="text-base sm:text-lg text-stone-300 font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -165,18 +165,17 @@ export const HeroCapture: React.FC<HeroCaptureProps> = ({ onLeadCaptured, formRe
 
             {/* Live Event Details Box */}
             <div className="bg-[#14161b]/90 border border-[#262a34] rounded-xl p-4 sm:p-5 shadow-lg backdrop-blur-sm max-w-lg mx-auto lg:mx-0">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#262a34]">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-[#c5a059]/15 text-[#c5a059]">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-stone-400 font-medium">Data da Live Exclusiva</div>
-                    <div className="text-sm sm:text-base font-bold text-[#f4efe6]">12 de Novembro às 20h00</div>
-                  </div>
+              <div className="flex items-start gap-3 pb-3 border-b border-[#262a34]">
+                <div className="p-2.5 rounded-lg bg-[#c5a059]/15 text-[#c5a059] shrink-0 mt-0.5">
+                  <Clock className="w-5 h-5" />
                 </div>
-                <div className="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded-md self-start sm:self-auto">
-                  100% Online & Gratuito
+                <div className="text-left space-y-0.5">
+                  <div className="text-[11px] uppercase tracking-wider text-stone-400 font-medium">Data da Live Exclusiva</div>
+                  <div className="text-sm sm:text-base font-bold text-[#f4efe6]">12 de Novembro às 20h00</div>
+                  <div className="text-xs text-emerald-400 font-semibold flex items-center gap-1.5 pt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>100% Online & Gratuito</span>
+                  </div>
                 </div>
               </div>
 
@@ -216,18 +215,18 @@ export const HeroCapture: React.FC<HeroCaptureProps> = ({ onLeadCaptured, formRe
             </div>
 
             {/* Quick Trust Checks */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-stone-300 pt-1">
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm sm:text-[15px] text-stone-200 pt-1">
+              <div className="flex items-center gap-2.5 justify-start text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#c5a059] shrink-0" />
                 <span>Músicos + Estrutura de Som</span>
               </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
+              <div className="flex items-center gap-2.5 justify-start text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#c5a059] shrink-0" />
                 <span>Prioridade no Grupo VIP</span>
               </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
+              <div className="flex items-center gap-2.5 justify-start text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#c5a059] shrink-0" />
-                <span>Congelamento de Tabela 2027</span>
+                <span>Condições especiais para o grupo.</span>
               </div>
             </div>
           </div>
