@@ -78,6 +78,19 @@ export const VipModal: React.FC<VipModalProps> = ({ lead, onClose, whatsappGroup
             href={whatsappGroupUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              try {
+                import('../utils/pixel').then(({ trackMetaCustomEvent }) => {
+                  trackMetaCustomEvent('WhatsAppVIPClick', {
+                    content_name: 'Entrada no Grupo VIP',
+                    lead_name: lead.name,
+                    wedding_date: lead.weddingDate
+                  });
+                });
+              } catch (err) {
+                console.warn(err);
+              }
+            }}
             className="w-full bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-base py-4 px-6 rounded-xl shadow-lg shadow-[#25d366]/30 flex items-center justify-center gap-3 transition-all hover:scale-[1.02] cursor-pointer"
           >
             <MessageCircle className="w-6 h-6 fill-white text-[#25d366]" />

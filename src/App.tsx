@@ -12,6 +12,8 @@ import { Footer } from './components/Footer';
 import { MessageCircle, ArrowRight, Bell } from 'lucide-react';
 import { Lead } from './types';
 
+import { DEFAULT_GOOGLE_SHEETS_WEBHOOK } from './utils/googleSheets';
+
 const DEFAULT_WHATSAPP_GROUP = 'https://chat.whatsapp.com/GzB9VocalMusic2027VIP';
 
 export default function App() {
@@ -53,7 +55,7 @@ export default function App() {
   });
 
   const [sheetsWebhookUrl, setSheetsWebhookUrl] = useState<string>(() => {
-    return localStorage.getItem('vocal_music_sheets_webhook') || '';
+    return localStorage.getItem('vocal_music_sheets_webhook') || DEFAULT_GOOGLE_SHEETS_WEBHOOK;
   });
 
   const [modalLead, setModalLead] = useState<Lead | null>(null);

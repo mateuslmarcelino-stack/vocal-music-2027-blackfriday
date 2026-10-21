@@ -103,11 +103,25 @@ export const HeroCapture: React.FC<HeroCaptureProps> = ({ onLeadCaptured, formRe
       utmContent
     };
 
-    // If webhook is provided, dispatch asynchronously in background
-    if (sheetsWebhookUrl) {
-      sendLeadToGoogleSheets(newLead, sheetsWebhookUrl).catch((err) => {
+    // Dispatch to Google Sheets
+    const targetUrl = sheetsWebhookUrl || (typeof window !== 'undefined' ? localStorage.getItem('vocal_music_sheets_webhook') : '') || '';
+    if (targetUrl) {
+      sendLeadToGoogleSheets(newLead, targetUrl).catch((err) => {
         console.warn('Falha no webhook Google Sheets:', err);
       });
+    }
+
+    // Fire Meta Pixel 'Lead' event for Meta Ads tracking
+    try {
+      import('../utils/pixel').then(({ trackMetaPixel }) => {
+        trackMetaPixel('Lead', {
+          content_name: 'Inscrição Live Black Friday 2027',
+          wedding_month: weddingMonth,
+          city: newLead.city
+        });
+      });
+    } catch (e) {
+      console.warn('Erro ao disparar pixel:', e);
     }
 
     setTimeout(() => {
