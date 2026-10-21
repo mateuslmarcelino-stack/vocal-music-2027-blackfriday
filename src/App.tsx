@@ -14,7 +14,17 @@ import { Lead } from './types';
 
 import { DEFAULT_GOOGLE_SHEETS_WEBHOOK } from './utils/googleSheets';
 
-const DEFAULT_WHATSAPP_GROUP = 'https://chat.whatsapp.com/GzB9VocalMusic2027VIP';
+export const DEFAULT_WHATSAPP_GROUP = 'https://chat.whatsapp.com/L4bV0UTnSJZ75Qlh0BsDqr';
+
+export function sanitizeWhatsAppUrl(url: string): string {
+  if (!url) return DEFAULT_WHATSAPP_GROUP;
+  // Remove tracking parameters like ?s=sw&p=i&mlu=4&ilr=4 that break WhatsApp Web
+  const match = url.match(/https?:\/\/chat\.whatsapp\.com\/([a-zA-Z0-9_-]+)/);
+  if (match && match[1]) {
+    return `https://chat.whatsapp.com/${match[1]}`;
+  }
+  return url.trim();
+}
 
 export default function App() {
   const formRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +61,8 @@ export default function App() {
   });
 
   const [whatsappGroupUrl, setWhatsappGroupUrl] = useState<string>(() => {
-    return localStorage.getItem('vocal_music_wa_group') || DEFAULT_WHATSAPP_GROUP;
+    const saved = localStorage.getItem('vocal_music_wa_group');
+    return saved ? sanitizeWhatsAppUrl(saved) : DEFAULT_WHATSAPP_GROUP;
   });
 
   const [sheetsWebhookUrl, setSheetsWebhookUrl] = useState<string>(() => {

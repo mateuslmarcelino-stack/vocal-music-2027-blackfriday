@@ -35,7 +35,10 @@ export const LeadsManagerModal: React.FC<LeadsManagerModalProps> = ({
 
   const handleSaveWaUrl = (e: React.FormEvent) => {
     e.preventDefault();
-    onUpdateWhatsappGroupUrl(newWaUrl);
+    const match = newWaUrl.match(/https?:\/\/chat\.whatsapp\.com\/([a-zA-Z0-9_-]+)/);
+    const clean = match && match[1] ? `https://chat.whatsapp.com/${match[1]}` : newWaUrl.trim();
+    setNewWaUrl(clean);
+    onUpdateWhatsappGroupUrl(clean);
     setSavedWaMsg(true);
     setTimeout(() => setSavedWaMsg(false), 2500);
   };

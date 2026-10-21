@@ -24,8 +24,13 @@ export const VipModal: React.FC<VipModalProps> = ({ lead, onClose, whatsappGroup
     });
   }, []);
 
+  // Clean URL to avoid query parameter issues on WhatsApp Web & mobile
+  const cleanUrl = whatsappGroupUrl
+    ? (whatsappGroupUrl.match(/https?:\/\/chat\.whatsapp\.com\/([a-zA-Z0-9_-]+)/)?.[0] || whatsappGroupUrl.trim())
+    : 'https://chat.whatsapp.com/L4bV0UTnSJZ75Qlh0BsDqr';
+
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(whatsappGroupUrl);
+    navigator.clipboard.writeText(cleanUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -75,7 +80,7 @@ export const VipModal: React.FC<VipModalProps> = ({ lead, onClose, whatsappGroup
 
           {/* Primary Action Button */}
           <a
-            href={whatsappGroupUrl}
+            href={cleanUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
