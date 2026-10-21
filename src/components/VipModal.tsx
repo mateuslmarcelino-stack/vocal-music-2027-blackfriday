@@ -81,7 +81,7 @@ export const VipModal: React.FC<VipModalProps> = ({ lead, onClose, whatsappGroup
           {/* Primary Action Button */}
           <a
             href={cleanUrl}
-            target="_blank"
+            target={typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? '_self' : '_blank'}
             rel="noopener noreferrer"
             onClick={() => {
               try {
