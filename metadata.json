@@ -1,0 +1,6 @@
+{
+  "name": "Vocal Music - Black Friday Casamentos 2027",
+  "description": "Página oficial de captura da Vocal Music para a Live Exclusiva de Black Friday (12 de Novembro às 20h). Garanta a trilha sonora e estrutura de som do seu casamento em 2027 com vagas e condições limitadas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
